@@ -1,0 +1,49 @@
+//  Latest compiled and minified CSS
+link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css', rel='stylesheet')
+//  Latest compiled JavaScript
+script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js')
+script(src='index.js')
+link(rel='stylesheet', href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css')
+meta(charset='UTF-8')
+title Postzegels
+nav.navbar.navbar-expand-sm.navbar-dark.bg-dark
+    .container-fluid
+        a.navbar-brand(href='/') Postzegels.be
+        .collapse.navbar-collapse#mynavbar
+            ul.navbar-nav.me-auto
+                li.nav-item
+                    a.nav-link(href='/') Home
+                li.nav-item
+                    a.nav-link(href='/postzegels') Alle postzegels
+        ul.nav.navbar-nav.navbar-right
+            li.nav-item#login
+                a.nav-link
+                    i.bi.bi-box-arrow-in-right Login
+            li.nav-item#logout
+                a.nav-link
+                    i.bi.bi-box-arrow-right Logout
+            li.nav-item#signup
+                a.nav-link(href='/signup')
+                    i.bi.bi-box-arrow-in-up Sign up
+.container
+    .row
+        br
+    .row
+        main.col.col-md-6
+            .container#content
+                form(method='POST')#gegevensform
+                    .mb-3
+                        label.form-label(for='voornaam') Gegevens:
+                        input.form-control#voornaam(type='name', placeholder='Voornaam*', name='voornaam', required)
+                        input.form-control#naam(type='name', placeholder='Naam*', name='naam', required)
+                    .mb-3.mt-3
+                        input.form-control#email(type='email', placeholder='Email*', name='email', required)
+                        input.form-control#tel(type='phone', placeholder='telefoonnummer', name='telefoonnr')
+                    .mb-3.mt-3
+                        input.form-control#gemeente(type='string', placeholder='gemeente', name='gemeente')
+                        input.form-control#postcode(type='number', placeholder='postcode', name='postcode')
+                        input.form-control#straat(type='string', placeholder='straat', name='straat')
+                        input.form-control#huisnr(type='number', placeholder='huisnummer', name='huisnr')
+                        button(type='submit').btn.btn-primary Sign up
+    script(src="../javascript/signup.js", type="module")
+    script(src="../javascript/common.js", type="module")

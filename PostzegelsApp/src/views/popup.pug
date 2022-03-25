@@ -1,0 +1,34 @@
+//  Latest compiled and minified CSS
+link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css', rel='stylesheet')
+//  Latest compiled JavaScript
+script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js')
+script(src='index.js')
+link(rel='stylesheet', href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css')
+meta(charset='UTF-8')
+title Postzegels
+.container
+    .row
+        br
+    .row
+        main.col.col-md-6
+            .container#content
+                form(method='POST')#gegevensform
+                    .mb-3
+                        input.form-control#voornaam(type='string', placeholder='postzegel id*', name='id_postzegel', required)
+                        input.form-control#aantal(type='number', placeholder='aantal', name='aantal', required)
+                    .mb-3.mt-3
+                        .form-check.form-check-inline
+                            input.form-check-input#radioPostfris(type='radio', name='postfris', value="true", required)
+                            label.form-check-label(for='checkboxAlle') Postfris
+                        .form-check.form-check-inline
+                            input.form-check-input#radioGestempeld(type='radio', name='postfris', value="false", required)
+                            label.form-check-label(for='checkboxEigen') Gestempeld
+                    .mb-3.mt-3
+                        .form-check.form-check-inline
+                            input.form-check-input#radioGegomd(type='radio', name='gegomd', value="true", required)
+                            label.form-check-label(for='checkboxAlle') Gegomd
+                        .form-check.form-check-inline
+                            input.form-check-input#radioNietGegomd(type='radio', name='gegomd', value="false", required)
+                            label.form-check-label(for='checkboxEigen') Niet Gegomd
+                        button(type='submit').btn.btn-primary Voeg toe
+    script(src="../javascript/popup.js", type="module")

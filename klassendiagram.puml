@@ -1,0 +1,67 @@
+@startuml
+skinparam ClassAttributeIconSize 0
+
+class Postzegel{
+    - ID: int
+    - Foto
+    - Omschrijving: String
+    - Auteur: String
+    - Formaat: Array<Int>[2]
+    - Tanding: Enum
+    - Datum: Date
+    - Land: String
+}
+
+
+class Postzegel_Euro{
+    - Prijs_Euro: Int
+}
+
+class Postzegel_Frank{
+    - Prijs_Frank
+
+}
+
+class Postzegel_Code{
+    - Prijs_code: Int
+    
+}
+
+class In_Bezit{
+    - Eigenaar: String
+    - Gegomd: Boolean
+    - First_date_sheet: Boolean
+    - Stamp: enum[Postfris, First_date, Collector]
+    - Waarde_current: Int
+    - Aantal
+}
+
+class PostzegelDAO{
+    
+}
+
+class Eigenaar{
+    - id: int
+    - naam: String
+    - voornaam: String
+}
+
+class Contactgegevens{
+    - email: String
+    - Telefoonnr: String
+    - adres: String
+}
+
+Postzegel <|-- Postzegel_Euro
+Postzegel<|-- Postzegel_Frank
+Postzegel <|-- Postzegel_Code
+Postzegel "1" --> "n" In_Bezit
+PostzegelDAO "1" --* "n" Postzegel
+PostzegelDAO "1" --* "n" In_Bezit
+PostzegelDAO "1" --* "n" Eigenaar
+
+Eigenaar "m" -right-> "n" In_Bezit
+Eigenaar "1" --> "1" Contactgegevens
+
+@enduml
+

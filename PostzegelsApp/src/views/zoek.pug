@@ -1,0 +1,58 @@
+//  Latest compiled and minified CSS
+link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css', rel='stylesheet')
+//  Latest compiled JavaScript
+script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js')
+script(src='index.js')
+link(rel='stylesheet', href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css')
+meta(charset='UTF-8')
+title Postzegels
+nav.navbar.navbar-expand-sm.navbar-dark.bg-dark
+  .container-fluid
+    a.navbar-brand(href='/') Postzegels.be
+    .collapse.navbar-collapse#mynavbar
+      ul.navbar-nav.me-auto
+        li.nav-item
+          a.nav-link(href='/') Home
+        li.nav-item
+          a.nav-link(href='/postzegels') Alle postzegels
+        li.nav-item
+          a.nav-link(href='/zoek') Zoek postzegels
+    ul.nav.navbar-nav.navbar-right
+      li.nav-item#login
+        a.nav-link
+          i.bi.bi-box-arrow-in-right Login
+      li.nav-item#logout
+        a.nav-link
+          i.bi.bi-box-arrow-right Logout
+      li.nav-item#signup
+        a.nav-link(href='/signup')
+          i.bi.bi-box-arrow-in-up Sign up
+.container
+    .row
+        br
+    .row
+        main.col.col-md-6
+            .container#content
+                form(method="GET", name="zoekform")#zoekform
+                    .form-check.form-check-inline
+                        input.form-check-input#radioAlle(type='radio', name='radioZoekWaar', value="alle", required)
+                        label.form-check-label(for='checkboxAlle') Alle postzegels
+                    .form-check.form-check-inline
+                        input.form-check-input#radioEigen(type='radio', name='radioZoekWaar', value="eigen", required)
+                        label.form-check-label(for='checkboxEigen') Eigen postzegels
+                    .mb-3.mt-3
+                        input.form-control#id(type='string', placeholder='id', name='id')
+                        input.form-control#omschrijving(type='string', placeholder='omschrijving', name='omschrijving')
+                        input.form-control#naam(type='string', placeholder='naam', name='naam')
+                        input.form-control#kleur(type='string', placeholder='kleur', name='kleur')
+                        input.form-control#land(type='string', placeholder='land', name='land')
+                        button(type='submit').btn.btn-primary Zoek
+
+.container
+    h1 Alle postzegels
+    .list-group#allepostzegels
+    br
+    .container
+        p.h6#clickmorenew Toon meer
+    script(src="../javascript/zoek.js", type="module")
+    script(src="../javascript/common.js", type="module")
