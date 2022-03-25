@@ -15,11 +15,3 @@ te bladeren en kennis op te doen over de verschillende postzegels door erop door
 
 Tot slot is er ook een zoekfunctie 'zoek postzegels' waarmee u specifieke postzegels kan opzoeken en details ervan kan 
 bekijken.
-
-Normaal worden alle errors opgevangen. Indien de server toch zou stoppen kan deze als volgt worden heropgestart.
-```
-ssh group5@193.191.169.97 en het wachtwoord
-cd /home/group5/project/PostzegelsApp
-forever start -c "npm start " .`
-```
-
